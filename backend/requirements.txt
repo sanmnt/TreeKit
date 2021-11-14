@@ -1,0 +1,2 @@
+neopixel-plus>=1.7
+websockets>=10.0
