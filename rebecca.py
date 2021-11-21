@@ -186,18 +186,19 @@ def saria():
 ### AN AUDIO EXPERIENCE
 ### download playsound (pip install playsound==1.2.2) to play .mp3
 def chaos():
-    pickme = ["Toad sings", "Never gonna give you up"] # suggestions are welcome
+    pickme = ["songs//fun.mp3", "songs//ToadChristmas.mp3"] # suggestions are welcome
     playsound(random.choice(pickme))
 
 def funTimes():
     print("Dancing Queen")
-    playsound("fun.mp3")
+    playsound("songs//fun.mp3")
 
 def calm(): # is this necessary
     print("Claire de Lune")
 
 def festivity():
-    print("Carol of the Bells")
+    print("Toad Christmas")
+    playsound("songs//ToadChristmas.mp3")
 
 
 chaos()
