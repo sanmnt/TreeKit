@@ -145,7 +145,41 @@ def jpTest():
     dot()
     endLetter()    
 
+def saria():
+    # Lights first few measures of Saria's song
+    # because it's stuck in my head.
+    # using sheet music https://musescore.com/icelands_puffin/scores/848626 first 8 measures
+    dot()
+    dot()
+    on(2)
 
+    dot()
+    dot()
+    on(2)
+
+    dot()
+    dot()
+    dot()
+    dot()
+
+    on(2)
+    dot()
+    dot()
+
+    
+    dot()
+    dot()
+    # split
+
+    on(3) # or 4
+    off()
+    dot()
+    
+    dot()
+    dot()
+    on(4) # or 6
+
+saria()
 
 ### AN AUDIO EXPERIENCE
 ### download playsound (pip install playsound==1.2.2) to play .mp3
