@@ -8,10 +8,13 @@ need to check:
     
     audio:
         what other songs/noises are good
+        actually download/import the music
+        run asynchronously?
 '''
 
 from playsound import playsound
 import time
+import random
 
 ### do I need these?
 #import board
@@ -178,23 +181,23 @@ def saria():
     dot()
     on(4) # or 6
 
-saria()
+
 
 ### AN AUDIO EXPERIENCE
 ### download playsound (pip install playsound==1.2.2) to play .mp3
 def chaos():
-    pickme = []
-    print()
-    # randomly play one:
-    #   toad sings
-    #   rick roll?
+    pickme = ["Toad sings", "Never gonna give you up"] # suggestions are welcome
+    playsound(random.choice(pickme))
 
 def funTimes():
-    playsound("fun.mp3")
     print("Dancing Queen")
+    playsound("fun.mp3")
 
-def calm():
+def calm(): # is this necessary
     print("Claire de Lune")
 
 def festivity():
     print("Carol of the Bells")
+
+
+chaos()
