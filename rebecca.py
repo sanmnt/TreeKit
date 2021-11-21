@@ -28,30 +28,29 @@ GENERAL MORSE CODE RULES for my reference
     between letters = 3TU
     between words = 7TU
 '''
-tu = 0.5
+tu = 0.5 # time unit (change if it's too long or short)
 
 ### LET THERE BE LIGHTS
+def off():
+    # If the lights turning off is too harsh, change it in here
+    pixels.fill((0, 0, 0))
+    time.sleep(tu) # light off = between symbol
+
 def on(t):
     # If I'm doing lights wrong, change it in here
     pixels.fill((0, 255, 0))
     ### or are we using this one
-    #for i in range(strip.numPixels()):
-    #  strip.setPixelColor(i, Color(0, 0, 0))
-    #strip.show()
+        #for i in range(strip.numPixels()):
+        #  strip.setPixelColor(i, Color(0, 0, 0))
+        #strip.show()
     time.sleep(t)
-
-def off():
-    # If the lights turning off is too harsh, change it in here
-    pixels.fill((0, 255, 0))
-    time.sleep(tu) # light off = between symbol
+    off() #always needs to be turned off anyway
 
 def dot():
     on(tu)
-    off()
 
 def dash():
     on(3 * tu)
-    off()
 
 def endLetter():
     time.sleep(3 * tu) # all symbols turn off the lights
