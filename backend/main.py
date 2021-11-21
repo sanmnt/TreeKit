@@ -14,18 +14,20 @@ def __unpack_frame(frame):
     return data
 
 async def handler(websocket, path):
-    frame = await websocket.recv()
-    if len(frame) != PIXEL_COUNT * 3:
-        print('Frame size != PIXEL_COUNT')
-        return
+    while True:
+        frame = await websocket.recv()
+        if len(frame) != PIXEL_COUNT * 3:
+            print('Frame size != PIXEL_COUNT')
+            return
 
-    data = __unpack_frame(frame)
-    pixel.leds[:] = data
-    pixel.write()
+        data = __unpack_frame(frame)
+        pixel.leds[:] = data
+        pixel.write()
 
 async def main():
     async with serve(handler, "localhost", 8000):
         print('Server up!')
         await asyncio.Future()  # run forever
 
-asyncio.run(main())
+if __name__ == '__main__':
+    asyncio.run(main())
