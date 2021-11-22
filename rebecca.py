@@ -191,15 +191,12 @@ def saria():
 # download playsound (pip install playsound==1.2.2) to play .mp3
 # song only plays while code executes
 def chaos():
-    pickme = ["songs//fun.mp3", "songs//ToadChristmas.mp3"] # suggestions are welcome
+    pickme = ["songs//fun.mp3", "songs//ToadChristmas.mp3"]
     playsound(random.choice(pickme), block = False)
 
 def funTimes():
-    print("Dancing Queen -")
+    print("Dancing Queen")
     playsound("songs//fun.mp3", block = False)
-
-def calm(): # is this necessary
-    print("Claire de Lune")
 
 def festivity():
     print("Toad Christmas")
@@ -207,4 +204,3 @@ def festivity():
 
 funTimes()
 lightJP()
-print("Heya")
