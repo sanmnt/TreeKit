@@ -21,8 +21,6 @@ import random
 #import neopixel
 #pixels = neopixel.NeoPixel(board.D18, 30)
 pixels = [] # just so compiler doesn't yell at me
-counter = []
-counter.append(0)
 
 '''
 GENERAL MORSE CODE RULES for my reference
@@ -38,14 +36,12 @@ tu = 0.5 # time unit (change if it's too long or short)
 ### LET THERE BE LIGHTS
 def off():
     # If the lights turning off is too harsh, change it in here
-    #pixels.fill((0, 0, 0))
+    pixels.fill((0, 0, 0))
     time.sleep(tu) # light off = between symbol
 
 def on(t):
     # If I'm doing lights wrong, change it in here
-    #pixels.fill((0, 255, 0))
-    print(counter[0])
-    counter[0] += 1
+    pixels.fill((0, 255, 0))
     ### or are we using this one
         #for i in range(strip.numPixels()):
         #  strip.setPixelColor(i, Color(0, 0, 0))
