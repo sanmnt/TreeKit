@@ -1,3 +1,4 @@
+import asyncio
 from treekit.pixel_array import PixelArray
 import websockets
 
@@ -10,3 +11,6 @@ class LightingClient:
 
     async def send_frame(self):
         await self.websocket.send(self.pixels.bytearr)
+
+    async def close(self):
+        await self.websocket.close()
