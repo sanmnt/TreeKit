@@ -184,12 +184,12 @@ async def saria():
 # download playsound (pip install playsound==1.2.2) to play .mp3
 # song only plays while code executes
 def chaos():
-    pickme = ["frontend//music//fun.mp3", "frontend//music//ToadChristmas.mp3"]
+    pickme = ["music/fun.mp3", "music/ToadChristmas.mp3"]
     playsound(random.choice(pickme), block = False)
 
 def funTimes():
     print("Dancing Queen")
-    playsound("frontend//music//fun.mp3", block = False)
+    playsound("music/fun.mp3", block = False)
 
 def festivity():
     print("Toad Christmas")
