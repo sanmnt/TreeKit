@@ -5,11 +5,6 @@ need to check:
             what color :o
         is tu sufficient
         is the blinking too sudden
-
-    audio:
-        what other songs/noises are good
-        actually download/import the music
-        run asynchronously?
 '''
 import asyncio
 import os
@@ -39,17 +34,32 @@ tu = 0.5 # time unit (change if it's too long or short)
 ### LET THERE BE LIGHTS
 async def off():
     # If the lights turning off is too harsh, change it in here
+<<<<<<< HEAD
     pixels.fill((0, 0, 0))
     await client.send_frame()
     await asyncio.sleep(tu) # light off = between symbol
+=======
+    pixels[:] = (0, 0, 0)
+    time.sleep(tu) # light off = between symbol
+>>>>>>> 04ffd365a304ca1c1e9f5159a21d3702e4369144
 
 async def on(t):
     # If I'm doing lights wrong, change it in here
+<<<<<<< HEAD
     pixels.fill((0, 255, 0))
     await client.send_frame()
 
     await asyncio.sleep(t)
     await off() #always needs to be turned off anyway
+=======
+    pixels[:] = (0, 255, 0)
+    ### or are we using this one
+        #for i in range(strip.numPixels()):
+        #  strip.setPixelColor(i, Color(0, 0, 0))
+        #strip.show()
+    time.sleep(t)
+    off() #always needs to be turned off anyway
+>>>>>>> 04ffd365a304ca1c1e9f5159a21d3702e4369144
 
 async def dot():
     await on(tu)
@@ -189,12 +199,12 @@ async def saria():
 # download playsound (pip install playsound==1.2.2) to play .mp3
 # song only plays while code executes
 def chaos():
-    pickme = ["music/fun.mp3", "music/ToadChristmas.mp3"]
+    pickme = ["frontend//music//fun.mp3", "frontend//music//ToadChristmas.mp3"]
     playsound(random.choice(pickme), block = False)
 
 def funTimes():
     print("Dancing Queen")
-    playsound("music/fun.mp3", block = False)
+    playsound("frontend//music//fun.mp3", block = False)
 
 def festivity():
     print("Toad Christmas")
