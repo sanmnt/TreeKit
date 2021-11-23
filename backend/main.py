@@ -9,6 +9,7 @@ from websockets.connection import State
 load_dotenv()
 PIXEL_COUNT = os.getenv('PIN', 400)
 pixel = NeoPixel(
+                  n=PIXEL_COUNT,
                   pin_num=os.getenv('PIN', 18),
                   test=bool(os.getenv('TEST', False)),
                   target='adafruit'

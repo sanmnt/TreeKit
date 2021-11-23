@@ -5,7 +5,7 @@ need to check:
             what color :o
         is tu sufficient
         is the blinking too sudden
-    
+
     audio:
         what other songs/noises are good
         actually download/import the music
@@ -64,7 +64,7 @@ def endWord():
 def lightJP():
     # Lights "John Python" in Morse code
     # .---/---/..../-.//.--./-.--/-/..../---/-.
-    
+
     # J .---
     dot()
     dash()
@@ -106,24 +106,24 @@ def lightJP():
     dash()
     dash()
     endLetter()
-    
+
     # T -
     dash()
     endLetter()
-    
+
     # H ....
     dot()
     dot()
     dot()
     dot()
     endLetter()
-    
+
     # O ---
     dash()
     dash()
     dash()
     endLetter()
-    
+
     # N -.
     dash()
     dot()
@@ -132,7 +132,7 @@ def lightJP():
 def jpTest():
     # Lights "JP" in Morse code
     # .---/.--.
-    
+
     # J .---
     dot()
     dash()
@@ -145,7 +145,7 @@ def jpTest():
     dash()
     dash()
     dot()
-    endLetter()    
+    endLetter()
 
 def saria():
     # Lights first few measures of Saria's song
@@ -168,7 +168,7 @@ def saria():
     dot()
     dot()
 
-    
+
     dot()
     dot()
     # split
@@ -176,7 +176,7 @@ def saria():
     on(3) # or 4
     off()
     dot()
-    
+
     dot()
     dot()
     on(4) # or 6
@@ -187,12 +187,12 @@ def saria():
 # download playsound (pip install playsound==1.2.2) to play .mp3
 # song only plays while code executes
 def chaos():
-    pickme = ["songs//fun.mp3", "songs//ToadChristmas.mp3"]
+    pickme = ["music/fun.mp3", "music/ToadChristmas.mp3"]
     playsound(random.choice(pickme), block = False)
 
 def funTimes():
     print("Dancing Queen")
-    playsound("songs//fun.mp3", block = False)
+    playsound("music/fun.mp3", block = False)
 
 def festivity():
     print("Toad Christmas")
