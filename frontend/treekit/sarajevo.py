@@ -24,3 +24,38 @@ def reset(pixels):
 def twinkle(pixels):
     for i in range(50):
         pixels[randint(0, 399)] = (128,128,128)
+
+def tumble_up(pixels, sections, colors):
+    for i in range(399, 399 - (80 *  sections), -80):
+        for j, color in enumerate(colors):
+            a = i - (j * 27)
+            b = i - ((j + 1) * 27)
+
+            if b < 0:
+                b = 0
+
+            if color == 'r':
+                pixels[b:a:1] = (128, 0, 0)
+            elif color == 'g':
+                pixels[b:a:1] = (0, 128, 0)
+            elif color == 'b':
+                pixels[b:a:1] = (0, 0, 128)
+
+def follow_up(pixels, timecode, color, start, end):
+    duration = end - start
+    num_lit = math.floor(((timecode - start) / duration) * 400)
+
+    pixels[400 - num_lit:399] = color
+
+def follow_down(pixels, timecode, color, start, end):
+    duration = end - start
+    num_lit = math.floor(((timecode - start) / duration) * 400)
+
+    pixels[0:num_lit] = color
+
+def fade_out(pixels, timecode, color, start, end):
+    duration = end - start
+    val = 1 - ((timecode - start) / duration)
+
+    new_color = (math.floor(color[0] * val), math.floor(color[1] * val), math.floor(color[2] * val))
+    pixels[:] = new_color
