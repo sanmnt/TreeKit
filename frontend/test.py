@@ -4,11 +4,13 @@ import os
 from dotenv import load_dotenv
 from treekit.lighting_client import LightingClient
 
+load_dotenv()
+
 async def main():
     client = LightingClient(400)
     pixels = client.pixels
 
-    await client.connect('10.10.0.167:8000')
+    await client.connect(os.getenv('ADDRESS', 'localhost:8000'))
 
     while True:
         pixels[:] = (128, 0, 0)

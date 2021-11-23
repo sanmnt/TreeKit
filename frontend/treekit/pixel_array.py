@@ -3,6 +3,9 @@ class PixelArray:
         self.n = n
         self.bytearr = bytearray(n * 3)
 
+    def fill(self, value):
+        self[:] = value
+
     def __setitem__(self, key, value):
         if isinstance(key, int):
             key = slice(key, key + 1)
