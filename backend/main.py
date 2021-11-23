@@ -1,11 +1,18 @@
 import asyncio
+import os
+
+from dotenv import load_dotenv
 from neopixel_plus import NeoPixel
 from websockets import serve
 from websockets.connection import State
 
-PIXEL_COUNT = 400
-
-pixel = NeoPixel(test=True, n=PIXEL_COUNT)
+load_dotenv()
+PIXEL_COUNT = os.getenv('PIN', 400)
+pixel = NeoPixel(
+                  pin_num=os.getenv('PIN', 18),
+                  test=bool(os.getenv('TEST', False)),
+                  target='adafruit'
+                )
 
 def __unpack_frame(frame):
     data = []
