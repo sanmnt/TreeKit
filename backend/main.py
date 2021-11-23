@@ -1,8 +1,9 @@
 import asyncio
 from neopixel_plus import NeoPixel
 from websockets import serve
+from websockets.connection import State
 
-PIXEL_COUNT = 120
+PIXEL_COUNT = 400
 
 pixel = NeoPixel(test=True, n=PIXEL_COUNT)
 
@@ -14,7 +15,7 @@ def __unpack_frame(frame):
     return data
 
 async def handler(websocket, path):
-    while True:
+    while websocket.state == State.OPEN:
         frame = await websocket.recv()
         if len(frame) != PIXEL_COUNT * 3:
             print('Frame size != PIXEL_COUNT')
