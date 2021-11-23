@@ -13,7 +13,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 import os
 from pathlib import Path
 import sys
-import jason, josh, rebecca, imagefun as andy
+import jason, josh, rebecca
 
 
 
@@ -327,7 +327,7 @@ class Ui_MainWindow(QMainWindow):
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(70, 380, 111, 111))
-        self.pushButton_2.clicked.connect(self.run_josh)
+        self.pushButton_2.clicked.connect(self.run_rebecca)
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -477,7 +477,7 @@ class Ui_MainWindow(QMainWindow):
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_3.setGeometry(QtCore.QRect(200, 250, 111, 111))
-        self.pushButton_3.clicked.connect(self.run_rebecca)
+        self.pushButton_3.clicked.connect(self.run_josh)
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -954,7 +954,7 @@ class Ui_MainWindow(QMainWindow):
         asyncio.get_event_loop().run_until_complete(rebecca.main())
 
     def run_andy(self):
-        andy.main()
+        os.system("python imagefun.py")
 
 
 

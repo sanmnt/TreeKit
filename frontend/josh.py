@@ -183,8 +183,8 @@ async def main():
 
 
         current_time = time()
-        if (current_time - last_update) < 0.05:
-            await asyncio.sleep(0.05 - (current_time - last_update))
+        if (current_time - last_update) < 0.10:
+            await asyncio.sleep(0.10 - (current_time - last_update))
 
         await client.send_frame()
         last_update = time()
