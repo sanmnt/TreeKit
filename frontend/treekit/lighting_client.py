@@ -7,7 +7,7 @@ class LightingClient:
         self.pixels = PixelArray(num_pixels)
 
     async def connect(self, address):
-        self.websocket = await websockets.connect(f'ws://{address}')
+        self.websocket = await websockets.connect(f'ws://{address}', ping_interval=None)
 
     async def send_frame(self):
         await self.websocket.send(self.pixels.bytearr)

@@ -34,7 +34,7 @@ async def handler(websocket, path):
         pixel.write()
 
 async def main():
-    async with serve(handler, "0.0.0.0", 8000):
+    async with serve(handler, "0.0.0.0", 8000, ping_interval=None):
         print('Server up!')
         await asyncio.Future()  # run forever
 
