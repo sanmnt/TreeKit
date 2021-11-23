@@ -26,7 +26,7 @@ async def handler(websocket, path):
     while websocket.state == State.OPEN:
         frame = await websocket.recv()
         if len(frame) != PIXEL_COUNT * 3:
-            print('Frame size != PIXEL_COUNT')
+            print(f'Frame size != PIXEL_COUNT, {len(frame)}')
             return
 
         data = __unpack_frame(frame)
