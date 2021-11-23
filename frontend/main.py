@@ -13,7 +13,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 import os
 from pathlib import Path
 import sys
-import jason, josh, rebecca
+import jason, josh, rebecca, imagefun as andy
 
 
 
@@ -176,7 +176,7 @@ class Ui_MainWindow(QMainWindow):
         self.label.setPixmap(QtGui.QPixmap("Guido-van-Rossum.jpg"))
         self.label.setObjectName("label")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.clicked.connect(asyncio.get_event_loop().run_until_complete(jason.main()))
+        self.pushButton.clicked.connect(self.run_jason)
         self.pushButton.setGeometry(QtCore.QRect(70, 250, 111, 111))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
@@ -327,7 +327,7 @@ class Ui_MainWindow(QMainWindow):
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(70, 380, 111, 111))
-        self.pushButton_2.clicked.connect(asyncio.get_event_loop().run_until_complete(josh.main()))
+        self.pushButton_2.clicked.connect(self.run_josh)
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -477,7 +477,7 @@ class Ui_MainWindow(QMainWindow):
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_3.setGeometry(QtCore.QRect(200, 250, 111, 111))
-        self.pushButton_3.clicked.connect(asyncio.get_event_loop().run_until_complete(rebecca.main()))
+        self.pushButton_3.clicked.connect(self.run_rebecca)
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -628,7 +628,7 @@ class Ui_MainWindow(QMainWindow):
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_4.setGeometry(QtCore.QRect(200, 380, 111, 111))
-        self.pushButton_4.clicked.connect(pass)
+        self.pushButton_4.clicked.connect(self.run_andy)
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -944,8 +944,19 @@ class Ui_MainWindow(QMainWindow):
 "P   Y   T   H   O   N"))
         self.label_2.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt;\">TreeControlUtility<br/></span><span style=\" font-size:12pt;\">Powered by: TreeControlEngine.py</span><span style=\" font-size:12pt; vertical-align:super;\">tm<br/></span>Copyright: Holiday Operations Worldwide 2021</p></body></html>"))
 
-    def testPrint(self):
-        print("hi there")
+    def run_jason(self):
+        asyncio.get_event_loop().run_until_complete(jason.main())
+
+    def run_josh(self):
+        asyncio.get_event_loop().run_until_complete(josh.main())
+
+    def run_rebecca(self):
+        asyncio.get_event_loop().run_until_complete(rebecca.main())
+
+    def run_andy(self):
+        andy.main()
+
+
 
 if __name__ == "__main__":
     app = QApplication([])

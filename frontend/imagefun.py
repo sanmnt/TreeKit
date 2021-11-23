@@ -45,11 +45,14 @@ class Test:
 
 
 
+def main():
+    tk = Tk()
+    tk.withdraw()
+    Test(tk)
+    lights.showing()
+    playsound('music/christmas.mp3', block = False)
 
-tk = Tk()
-tk.withdraw()
-Test(tk)
-lights.showing()
-playsound('music/christmas.mp3', block = False)
+    tk.mainloop()
 
-tk.mainloop()
+if __name__ == '__main__':
+    main()
